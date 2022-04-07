@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include "BMS_Sender.h"
 
 #define  No_of_Readings 50
 extern void readBMSDataFromFile(float* Temperature, float* SOC, float* ChargeRate);
