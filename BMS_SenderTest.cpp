@@ -11,8 +11,8 @@ TEST_CASE("Test to verify the data read from the File")
   int i;
   for(i = 0; i < 2; i++)
   {
-    REQUIRE(Temperature[i] = expectedOutput[i][0]);
-    REQUIRE(SOC[i] = expectedOutput[i][1]);
-    REQUIRE(ChargeRate[i] = expectedOutput[i][2]);
+    REQUIRE(Temperature[i] == expectedOutput[i][0]);
+    REQUIRE(SOC[i] == expectedOutput[i][1]);
+    REQUIRE(ChargeRate[i] == expectedOutput[i][2]);
   }
 }
