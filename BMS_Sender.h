@@ -6,4 +6,4 @@
 extern void readBMSDataFromFile(float* Temperature, float* SOC, float* ChargeRate);
 extern void printOnConsole(float TempPrint, float SOCPrint, float ChargeRatePrint);
 extern void sendBMSDataToConsole(float* Temperature, float* SOC, float* ChargeRate);
-extern void senderMain_BMS();
+extern void sender_BMS();
