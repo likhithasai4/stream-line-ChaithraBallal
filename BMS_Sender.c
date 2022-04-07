@@ -42,7 +42,7 @@ void sendBMSDataToConsole(float* Temperature, float* SOC, float* ChargeRate)
   }
 }
 
-void senderMain_BMS()
+void sender_BMS()
 {
   float Temperature[No_of_Readings], SOC[No_of_Readings], ChargeRate[No_of_Readings] = {0};
   readBMSDataFromFile(Temperature, SOC, ChargeRate);
