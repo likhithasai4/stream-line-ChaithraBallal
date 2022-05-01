@@ -20,4 +20,5 @@ std::vector<SensorsData> readSensorsDataFromConsole() {
       sensorsData.chargeRate = atof(input.c_str() + 54);
       sensorsDataHolder.push_back();*/
     }
+    return sensorsDataHolder;
 }
