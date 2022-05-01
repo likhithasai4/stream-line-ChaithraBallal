@@ -13,7 +13,7 @@ std::vector<SensorsData> readSensorsDataFromConsole() {
         std::cin >> sensorsData.temperatureSensorData;
         std::cin >> sensorsData.SOCSensorData;
         std::cin >> sensorsData.chargeRate;
-        sensorsDataHolder.push_back();
+        sensorsDataHolder.push_back(sensorsData);
         
       /*sensorsData.temperatureSensorData = atof(input.c_str() + 13);
       sensorsData.SOCSensorData = atof(input.c_str() + 30);
