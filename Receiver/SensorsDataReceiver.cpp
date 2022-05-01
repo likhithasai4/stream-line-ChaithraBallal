@@ -10,9 +10,14 @@ std::vector<SensorsData> readSensorsDataFromConsole() {
     std::string input;
     getline(std::cin, input);
     for(int i = 0; i < 50; i++) {
-      sensorsData.temperatureSensorData = atof(numberString.c_str() + 13);
-      sensorsData.SOCSensorData = atof(numberString.c_str() + 30);
-      sensorsData.chargeRate = atof(numberString.c_str() + 54);
-      sensorsDataHolder.push_back();
+        std::cin >> sensorsData.temperatureSensorData;
+        std::cin >> sensorsData.SOCSensorData;
+        std::cin >> sensorsData.chargeRate;
+        sensorsDataHolder.push_back();
+        
+      /*sensorsData.temperatureSensorData = atof(input.c_str() + 13);
+      sensorsData.SOCSensorData = atof(input.c_str() + 30);
+      sensorsData.chargeRate = atof(input.c_str() + 54);
+      sensorsDataHolder.push_back();*/
     }
 }
