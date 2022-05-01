@@ -1,6 +1,8 @@
-#include "SensorsDataReceiver.h"
+#include <iostream>
 #include <string>
 #include <cstdlib>
+
+#include "SensorsDataReceiver.h"
 
 std::vector<SensorsData> readSensorsDataFromConsole() {
     std::vector<SensorsData> sensorsDataHolder;
