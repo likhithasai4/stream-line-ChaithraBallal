@@ -21,7 +21,7 @@ jobs:
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testSensorsDataReceiver ./Receiver/*.c*
       
     - name: pipe_sender_receiver_executables
-      run: ./testchecker | ./testSensorsDataReceiver
+      run: ./testchecker
 
     - name: collect coverage
       run: gcovr --gcov-exclude=".*test.*" -r . --html --html-details -o coverage.html --print-summary
