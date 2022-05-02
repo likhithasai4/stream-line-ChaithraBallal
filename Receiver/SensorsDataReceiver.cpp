@@ -13,6 +13,11 @@ std::vector<SensorsData> readSensorsDataFromConsole() {
         std::cin >> sensorsData.temperatureSensorData;
         std::cin >> sensorsData.SOCSensorData;
         std::cin >> sensorsData.chargeRate;
+        
+        std::cout<< sensorsData.temperatureSensorData<<std::endl;
+        std::cout<< sensorsData.SOCSensorData<<std::endl;
+        std::cout<< sensorsData.chargeRate<<std::endl<<std::endl;
+        
         sensorsDataHolder.push_back(sensorsData);
         
       /*sensorsData.temperatureSensorData = atof(input.c_str() + 13);
