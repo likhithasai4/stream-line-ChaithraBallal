@@ -8,7 +8,7 @@ TEST_CASE("read sensor data from console") {
   REQUIRE(sensorsDataHolder.size() == 50);
   
   struct SensorsData sensorsData;
-  sensorsData.temperatureSensorData = 78;
+  REQUIRE(sensorsDataHolder[44].temperatureSensorData = 78);
   sensorsData.SOCSensorData = 56;
   sensorsData.chargeRate = 0.97;
   REQUIRE(sensorsDataHolder[44] == sensorsData);
