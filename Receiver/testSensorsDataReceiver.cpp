@@ -5,21 +5,16 @@
 TEST_CASE("validate statistics: Lowest") {
   readSensorsDataFromConsole();
   struct SensorsData sensorsDataReceived = inferLowestValues();
-  struct SensorsData sensorsDataExpected;
-  sensorsDataExpected.temperatureSensorData = -15;
-  sensorsDataExpected.SOCSensorData = -4;
-  sensorsDataExpected.chargeRate = -0.5;
-  REQUIRE(sensorsDataReceived.temperatureSensorData == -15);
   
-  REQUIRE(sensorsDataReceived == sensorsDataExpected);
+  REQUIRE(sensorsDataReceived.temperatureSensorData == -15);
+  REQUIRE(sensorsDataReceived.SOCSensorData == -4);
+  REQUIRE(sensorsDataReceived.chargeRate == -0.5);
 }
 
 TEST_CASE("validate statistics: highest") {
   struct SensorsData sensorsDataReceived = inferHighestValues();
-  struct SensorsData sensorsDataExpected;
-  sensorsDataExpected.temperatureSensorData = 92;
-  sensorsDataExpected.SOCSensorData = 99;
-  sensorsDataExpected.chargeRate = 1.0;
-  REQUIRE(sensorsDataReceived.temperatureSensorData == sensorsDataExpected.temperatureSensorData);
-  REQUIRE(sensorsDataReceived == sensorsDataExpected);
+ 
+  REQUIRE(sensorsDataReceived.temperatureSensorData == 92);
+  REQUIRE(sensorsDataReceived.SOCSensorData == 99);
+  REQUIRE(sensorsDataReceived.chargeRate == 1.0);
 }
