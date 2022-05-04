@@ -8,7 +8,7 @@ TEST_CASE("validate statistics: Lowest") {
   struct SensorsData sensorsDataExpected;
   sensorsDataExpected.temperatureSensorData = -15;
   sensorsDataExpected.SOCSensorData = -4;
-  sensorsData.chargeRate = -0.5;
+  sensorsDataExpected.chargeRate = -0.5;
   REQUIRE(sensorsDataReceived == sensorsDataExpected);
 }
 
@@ -17,6 +17,6 @@ TEST_CASE("validate statistics: highest") {
   struct SensorsData sensorsDataExpected;
   sensorsDataExpected.temperatureSensorData = 92;
   sensorsDataExpected.SOCSensorData = 99;
-  sensorsData.chargeRate = 1.0;
+  sensorsDataExpected.chargeRate = 1.0;
   REQUIRE(sensorsDataReceived == sensorsDataExpected);
 }
