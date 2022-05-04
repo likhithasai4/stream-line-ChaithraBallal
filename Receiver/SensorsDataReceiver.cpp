@@ -3,9 +3,9 @@
 #include <cstdlib>
 
 #include "SensorsDataReceiver.h"
+std::vector<SensorsData> sensorsDataHolder;
 
-std::vector<SensorsData> readSensorsDataFromConsole() {
-    std::vector<SensorsData> sensorsDataHolder;
+void readSensorsDataFromConsole() {
     SensorsData sensorsData;
     std::string input;
     getline(std::cin, input);
@@ -20,11 +20,33 @@ std::vector<SensorsData> readSensorsDataFromConsole() {
         std::cout<< sensorsData.chargeRate<<" "<<std::endl;
         
         sensorsDataHolder.push_back(sensorsData);
-        
-      /*sensorsData.temperatureSensorData = atof(input.c_str() + 13);
-      sensorsData.SOCSensorData = atof(input.c_str() + 30);
-      sensorsData.chargeRate = atof(input.c_str() + 54);
-      sensorsDataHolder.push_back();*/
     }
-    return sensorsDataHolder;
+}
+
+SensorsData inferLowestValues() {
+    SensorsData sensorsData;
+    for(SensorsData data : sensorsDataHolder) {
+        sensorsData.temperatureSensorData = getLowestValue(sensorsData.temperatureSensorData, data.temperatureSensorData);
+        sensorsData.SOCSensorData = getLowestValue(sensorsData.SOCSensorData, data.SOCSensorData);
+        sensorsData.temperatureSensorData = getLowestValue(sensorsData,temperatureSensorData > data.temperatureSensorData);
+    }
+    return sensorsData;
+}
+
+SensorsData inferLowestValues() {
+    SensorsData sensorsData;
+    for(SensorsData data : sensorsDataHolder) {
+        sensorsData.temperatureSensorData = getHighestValue(sensorsData.temperatureSensorData, data.temperatureSensorData);
+        sensorsData.SOCSensorData = getHighestValue(sensorsData.SOCSensorData, data.SOCSensorData);
+        sensorsData.temperatureSensorData = getHighestValue(sensorsData,temperatureSensorData > data.temperatureSensorData);
+    }
+    return sensorsData;
+}
+
+float getLowestValue(float lhs, float rhs) {
+    return (lhs<rhs)?lhs:rhs;
+}
+
+float getHighestValue(float lhs, float rhs) {
+    return (lhs>rhs)?lhs:rhs;
 }
