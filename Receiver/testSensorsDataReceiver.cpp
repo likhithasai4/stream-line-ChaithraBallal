@@ -9,7 +9,7 @@ TEST_CASE("validate statistics: Lowest") {
   sensorsDataExpected.temperatureSensorData = -15;
   sensorsDataExpected.SOCSensorData = -4;
   sensorsDataExpected.chargeRate = -0.5;
-  REQUIRE(sensorsDataReceived.temperatureSensorData == sensorsDataExpected.temperatureSensorData);
+  REQUIRE(sensorsDataExpected.temperatureSensorData == -15);
   REQUIRE(sensorsDataReceived == sensorsDataExpected);
 }
 
