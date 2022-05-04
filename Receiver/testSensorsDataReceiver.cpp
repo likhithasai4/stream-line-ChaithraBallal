@@ -8,7 +8,6 @@ TEST_CASE("read sensor data from console") {
   REQUIRE(sensorsDataHolder.size() == 50);
   
   struct SensorsData sensorsData;
-  REQUIRE(sensorsDataHolder[44].temperatureSensorData == 78);
   sensorsData.temperatureSensorData = 78;
   sensorsData.SOCSensorData = 56;
   sensorsData.chargeRate = 0.97;
@@ -18,4 +17,23 @@ TEST_CASE("read sensor data from console") {
   sensorsData.SOCSensorData = 95;
   sensorsData.chargeRate = 0.93;
   REQUIRE(sensorsDataHolder[21] == sensorsData);
+}
+
+
+TEST_CASE("validate statistics: Lowest") {
+  struct SensorsData sensorsDataReceived = inferLowestValues();
+  struct SensorsData sensorsDataExpected;
+  sensorsDataExpected.temperatureSensorData = -15;
+  sensorsDataExpected.SOCSensorData = -4;
+  sensorsData.chargeRate = -0.5;
+  REQUIRE(sensorsDataReceived == sensorsDataExpected);
+}
+
+TEST_CASE("validate statistics: highest") {
+  struct SensorsData sensorsDataReceived = inferHighestValues();
+  struct SensorsData sensorsDataExpected;
+  sensorsDataExpected.temperatureSensorData = 92;
+  sensorsDataExpected.SOCSensorData = 99;
+  sensorsData.chargeRate = 1.0;
+  REQUIRE(sensorsDataReceived == sensorsDataExpected);
 }
