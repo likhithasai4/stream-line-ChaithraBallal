@@ -18,6 +18,6 @@ struct SensorsData{
 
 void readSensorsDataFromConsole();
 SensorsData inferLowestValues();
-SensorsData inferLowestValues();
-/*float getLowestValue(float lhs, float rhs);
-float getHighestValue(float lhs, float rhs);*/
+SensorsData inferHighestValues();
+float getLowestValue(float lhs, float rhs);
+float getHighestValue(float lhs, float rhs);
