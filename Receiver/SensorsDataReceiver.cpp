@@ -9,14 +9,15 @@ std::vector<SensorsData> readSensorsDataFromConsole() {
     SensorsData sensorsData;
     std::string input;
     getline(std::cin, input);
+    std::cout<<input<<std::endl;
     for(int i = 0; i < 50; i++) {
         std::cin >> sensorsData.temperatureSensorData;
         std::cin >> sensorsData.SOCSensorData;
         std::cin >> sensorsData.chargeRate;
         
-        std::cout<< sensorsData.temperatureSensorData<<std::endl;
-        std::cout<< sensorsData.SOCSensorData<<std::endl;
-        std::cout<< sensorsData.chargeRate<<std::endl<<std::endl;
+        std::cout<< sensorsData.temperatureSensorData<<" ";
+        std::cout<< sensorsData.SOCSensorData<<" ";
+        std::cout<< sensorsData.chargeRate<<" "<<std::endl;
         
         sensorsDataHolder.push_back(sensorsData);
         
