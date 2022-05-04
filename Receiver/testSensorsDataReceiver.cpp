@@ -9,6 +9,7 @@ TEST_CASE("validate statistics: Lowest") {
   sensorsDataExpected.temperatureSensorData = -15;
   sensorsDataExpected.SOCSensorData = -4;
   sensorsDataExpected.chargeRate = -0.5;
+  REQUIRE(sensorsDataReceived.temperatureSensorData == sensorsDataExpected.temperatureSensorData);
   REQUIRE(sensorsDataReceived == sensorsDataExpected);
 }
 
@@ -18,5 +19,6 @@ TEST_CASE("validate statistics: highest") {
   sensorsDataExpected.temperatureSensorData = 92;
   sensorsDataExpected.SOCSensorData = 99;
   sensorsDataExpected.chargeRate = 1.0;
+  REQUIRE(sensorsDataReceived.temperatureSensorData == sensorsDataExpected.temperatureSensorData);
   REQUIRE(sensorsDataReceived == sensorsDataExpected);
 }
