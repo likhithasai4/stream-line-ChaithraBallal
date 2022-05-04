@@ -33,7 +33,7 @@ SensorsData inferLowestValues() {
     return sensorsData;
 }
 
-SensorsData inferLowestValues() {
+SensorsData inferHighestValues() {
     SensorsData sensorsData;
     for(SensorsData data : sensorsDataHolder) {
         sensorsData.temperatureSensorData = getHighestValue(sensorsData.temperatureSensorData, data.temperatureSensorData);
