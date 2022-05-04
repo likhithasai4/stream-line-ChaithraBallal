@@ -28,7 +28,7 @@ SensorsData inferLowestValues() {
     for(SensorsData data : sensorsDataHolder) {
         sensorsData.temperatureSensorData = getLowestValue(sensorsData.temperatureSensorData, data.temperatureSensorData);
         sensorsData.SOCSensorData = getLowestValue(sensorsData.SOCSensorData, data.SOCSensorData);
-        sensorsData.temperatureSensorData = getLowestValue(sensorsData,temperatureSensorData > data.temperatureSensorData);
+        sensorsData.temperatureSensorData = getLowestValue(sensorsData.temperatureSensorData,  data.temperatureSensorData);
     }
     return sensorsData;
 }
@@ -38,7 +38,7 @@ SensorsData inferHighestValues() {
     for(SensorsData data : sensorsDataHolder) {
         sensorsData.temperatureSensorData = getHighestValue(sensorsData.temperatureSensorData, data.temperatureSensorData);
         sensorsData.SOCSensorData = getHighestValue(sensorsData.SOCSensorData, data.SOCSensorData);
-        sensorsData.temperatureSensorData = getHighestValue(sensorsData,temperatureSensorData > data.temperatureSensorData);
+        sensorsData.temperatureSensorData = getHighestValue(sensorsData.temperatureSensorData,  data.temperatureSensorData);
     }
     return sensorsData;
 }
