@@ -18,7 +18,6 @@ void readSensorsDataFromConsole() {
         std::cout<< sensorsData.temperatureSensorData<<" ";
         std::cout<< sensorsData.SOCSensorData<<" ";
         std::cout<< sensorsData.chargeRate<<" "<<std::endl;
-        
         sensorsDataHolder.push_back(sensorsData);
     }
 }
